@@ -173,11 +173,14 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               width: 71,
                             ),
-                            Image.asset(
-                              'assets/images/profile.png',
-                              width: 60,
-                              height: 60,
-                              fit: BoxFit.cover,
+                            GestureDetector(
+                              onTap: () {},
+                              child: Image.asset(
+                                'assets/images/profile.png',
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                             SizedBox(
                               width: 20,

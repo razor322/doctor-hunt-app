@@ -252,6 +252,30 @@ class _AppointmentPage2State extends State<AppointmentPage2> {
                           ],
                         ),
                       ),
+
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20, bottom: 10),
+                        child: Center(
+                          child: Container(
+                            width: 295,
+                            height: 54,
+                            child: MaterialButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4)),
+                              color: primary,
+                              textColor: Colors.white,
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            AppointmentPage2()));
+                              },
+                              child: Text('Confirm'),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
