@@ -2,6 +2,7 @@
 
 import 'package:doctor_hunt_app/const.dart';
 import 'package:doctor_hunt_app/pages/home_page.dart';
+import 'package:doctor_hunt_app/pages/signup.dart';
 import 'package:doctor_hunt_app/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding_animation/onboarding_animation.dart';
@@ -16,7 +17,8 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   void _onIntroEnd(context) {
     Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (context) => BotNavBar()), (route) => false);
+        // MaterialPageRoute(builder: (context) => BotNavBar()), (route) => false);
+        MaterialPageRoute(builder: (context) => SignUp()), (route) => false);
   }
 
   @override

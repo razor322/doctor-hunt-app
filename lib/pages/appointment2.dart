@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:doctor_hunt_app/const.dart';
+import 'package:doctor_hunt_app/pages/advanced_drawer.dart';
 import 'package:doctor_hunt_app/pages/appointment.dart';
 import 'package:doctor_hunt_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
@@ -257,19 +258,88 @@ class _AppointmentPage2State extends State<AppointmentPage2> {
                         padding: const EdgeInsets.only(top: 20, bottom: 10),
                         child: Center(
                           child: Container(
+                            color: Colors.white,
                             width: 295,
                             height: 54,
                             child: MaterialButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4)),
                               color: primary,
                               textColor: Colors.white,
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            AppointmentPage2()));
+                                // Tampilkan pop-up "Thank You" ketika tombol "Confirm" ditekan
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      backgroundColor: Colors.white,
+                                      content: Container(
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Image.asset(
+                                              'assets/icons/jempol.png',
+                                              width: 156,
+                                              height: 156,
+                                            ),
+                                            SizedBox(height: 20),
+                                            Text(
+                                              'Thank You!',
+                                              style: TextStyle(
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Text(
+                                              'Your Appointment Successful',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                            SizedBox(height: 21),
+                                            Text(
+                                              'You booked an appointment with Dr. Pediatrician Purpieson on February 21, at 02:00 PM',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                            ),
+                                            SizedBox(height: 21),
+                                            ElevatedButton(
+                                              onPressed: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                                              },
+                                              style: ElevatedButton.styleFrom(
+                                                primary: Color(0xFF0EBE7F), // Atur warna latar belakang
+                                              ),
+                                              child: Text('Done', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                                            ),
+                                            SizedBox(height: 10),
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.pop(context); // Tutup dialog saat tombol "Edit your appointment" ditekan
+                                              },
+                                              style: TextButton.styleFrom(
+                                                backgroundColor: Colors.transparent,
+                                              ),
+                                              child: Text(
+                                                'Edit your appointment',
+                                                style: TextStyle(
+                                                  color: Colors.black, // Ubah warna teks sesuai kebutuhan
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                );
                               },
                               child: Text('Confirm'),
                             ),
@@ -279,7 +349,7 @@ class _AppointmentPage2State extends State<AppointmentPage2> {
                     ],
                   ),
                 ),
-              )
+              ), 
             ],
           )
         ],
