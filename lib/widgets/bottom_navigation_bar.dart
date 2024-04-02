@@ -1,6 +1,8 @@
 import 'package:doctor_hunt_app/const.dart';
 import 'package:doctor_hunt_app/pages/doctors_page.dart';
 import 'package:doctor_hunt_app/pages/home_page.dart';
+import 'package:doctor_hunt_app/pages/new/diagonstics4.dart';
+import 'package:doctor_hunt_app/pages/new/doctorsfind11.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -81,13 +83,13 @@ class PageTwo extends StatelessWidget {
 class PageThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const DoctorsPage();
+    return DiagonsticsPage();
   }
 }
 
 class PageFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const DoctorsPage();
+    return const DoctorFindPage2();
   }
 }

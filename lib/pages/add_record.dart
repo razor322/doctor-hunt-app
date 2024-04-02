@@ -24,44 +24,44 @@ class _AddRecordState extends State<AddRecord> {
             ),
           ),
           Positioned(
-              top: 25,
-              left: 10,
-              right: 10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(Icons.arrow_back_ios),
+            top: 25,
+            left: 10,
+            right: 10,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(Icons.arrow_back_ios),
+                    ),
+                    Text(
+                      'Add Record',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
-                      Text(
-                        'Add Record',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(width: 40), // Spacer
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Image.asset(
-                    'assets/images/duapria.png',
-                    width: 216,
-                    height: 125,
-                  ),
-                ],
-              ),
+                    ),
+                    SizedBox(width: 40), // Spacer
+                  ],
+                ),
+                SizedBox(height: 10),
+                Image.asset(
+                  'assets/images/duapria.png',
+                  width: 216,
+                  height: 125,
+                ),
+              ],
             ),
+          ),
           Positioned(
             top: 359,
-            left: 20,
+            left: 6,
             child: Container(
               width: 380,
               height: 453,
@@ -86,33 +86,32 @@ class _AddRecordState extends State<AddRecord> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Record for',
-                            style: TextStyle(
-                              fontSize: 16,
-                            ),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Record for',
+                          style: TextStyle(
+                            fontSize: 16,
                           ),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Abdullah Mamun',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFF0EBE7F),
-                                ),
+                        ),
+                        SizedBox(height: 5),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Abdullah Mamun',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF0EBE7F),
                               ),
-                              SizedBox(width: 166),
-                              Icon(Icons.edit),
-                            ],
-                          ),
-                        ],
-                      ),
-
+                            ),
+                            SizedBox(width: 166),
+                            Icon(Icons.edit),
+                          ],
+                        ),
+                      ],
+                    ),
                     SizedBox(height: 10),
                     Text(
                       'Type of record',
@@ -125,7 +124,8 @@ class _AddRecordState extends State<AddRecord> {
                       children: [
                         _buildRecordTypeIcon(Icons.report, 'Report'),
                         SizedBox(width: 10),
-                        _buildRecordTypeIcon(Icons.local_hospital, 'Prescription'),
+                        _buildRecordTypeIcon(
+                            Icons.local_hospital, 'Prescription'),
                         SizedBox(width: 10),
                         _buildRecordTypeIcon(Icons.description, 'Invoice'),
                       ],
@@ -147,7 +147,7 @@ class _AddRecordState extends State<AddRecord> {
                             fontWeight: FontWeight.bold,
                             color: Color(0xFF0EBE7F),
                           ),
-                        ), 
+                        ),
                         SizedBox(width: 200),
                         Icon(Icons.edit),
                       ],
@@ -155,7 +155,10 @@ class _AddRecordState extends State<AddRecord> {
                     SizedBox(height: 70),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => AllRecord()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllRecord()));
                       },
                       child: Container(
                         width: 300,

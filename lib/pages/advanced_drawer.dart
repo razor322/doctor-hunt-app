@@ -1,11 +1,10 @@
-import 'package:doctor_hunt_app/const.dart';
-import 'package:doctor_hunt_app/pages/doctor_details_page.dart';
-import 'package:doctor_hunt_app/pages/doctor_find_page.dart';
-import 'package:doctor_hunt_app/pages/doctor_live_page.dart';
-import 'package:doctor_hunt_app/pages/doctor_popular.dart';
-import 'package:doctor_hunt_app/pages/doctor_select_time1.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
+
 import 'package:doctor_hunt_app/pages/login.dart';
 import 'package:doctor_hunt_app/pages/medical_record.dart';
+import 'package:doctor_hunt_app/pages/new/helpcenter3.dart';
+import 'package:doctor_hunt_app/pages/new/privacy8.dart';
+import 'package:doctor_hunt_app/pages/new/setting9.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 
@@ -62,8 +61,8 @@ class DoctorCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 140,
-                  height: 140,
+                  width: 120,
+                  height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     image: DecorationImage(
@@ -100,12 +99,14 @@ class DoctorCard extends StatelessWidget {
                       SizedBox(height: 8),
                       Text(
                         doctorName,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 5),
                       Text(
                         specialization,
-                        style: TextStyle(fontSize: 13, color: Color(0xFF0EBE7F)),
+                        style:
+                            TextStyle(fontSize: 13, color: Color(0xFF0EBE7F)),
                       ),
                       SizedBox(height: 5),
                       Text(
@@ -156,7 +157,10 @@ class DoctorCard extends StatelessWidget {
                         alignment: Alignment.topRight,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => MedicalRecord()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MedicalRecord()));
                           },
                           child: Text(
                             'Book Now',
@@ -274,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: _handleMenuButtonPressed,
             icon: ValueListenableBuilder<AdvancedDrawerValue>(
               valueListenable: _advancedDrawerController,
-                           builder: (_, value, __) {
+              builder: (_, value, __) {
                 return AnimatedSwitcher(
                   duration: Duration(milliseconds: 250),
                   child: Icon(
@@ -316,7 +320,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: doctors.length,
                     itemBuilder: (context, index) {
                       final doctor = doctors[index];
-                      if (searchQuery.isEmpty || doctor.doctorName.toLowerCase().contains(searchQuery.toLowerCase())) {
+                      if (searchQuery.isEmpty ||
+                          doctor.doctorName
+                              .toLowerCase()
+                              .contains(searchQuery.toLowerCase())) {
                         return DoctorCard(
                           imagePath: doctor.imagePath,
                           doctorName: doctor.doctorName,
@@ -391,7 +398,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
                       },
                       child: Icon(
                         Icons.cancel_rounded,
@@ -400,52 +408,114 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-              )
-              ,SizedBox(height: 120,),
-              ListTile(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
-                },
-                leading: Icon(Icons.person, color: Colors.white,),
-                title: Text('My Doctors', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+              ),
+              SizedBox(
+                height: 120,
               ),
               ListTile(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MedicalRecord()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
-                leading: Icon(Icons.note_add, color: Colors.white,),
-                title: Text('Medical Records', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'My Doctors',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+              ),
+              ListTile(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MedicalRecord()));
+                },
+                leading: Icon(
+                  Icons.note_add,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Medical Records',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               ListTile(
                 onTap: () {},
-                leading: Icon(Icons.wallet, color: Colors.white,),
-                title: Text('Payments', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                leading: Icon(
+                  Icons.wallet,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Payments',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               ListTile(
                 onTap: () {},
-                leading: Icon(Icons.calendar_month, color: Colors.white,),
-                title: Text('Test Bookings', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                leading: Icon(
+                  Icons.calendar_month,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Test Bookings',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               ListTile(
-                onTap: () {},
-                leading: Icon(Icons.verified, color: Colors.white,),
-                title: Text('Privacy & Policy', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => PrivacyPage()),
+                      (route) => false);
+                },
+                leading: Icon(
+                  Icons.verified,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Privacy & Policy',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               ListTile(
-                onTap: () {},
-                leading: Icon(Icons.help_center_rounded, color: Colors.white,),
-                title: Text('Help Center', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => HelpCenterPage()),
+                      (route) => false);
+                },
+                leading: Icon(
+                  Icons.help_center_rounded,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Help Center',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               ListTile(
-                onTap: () {},
-                leading: Icon(Icons.settings, color: Colors.white,),
-                title: Text('Settings', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => SettingPage()),
+                      (route) => false);
+                },
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'Settings',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
               Spacer(),
               Padding(
@@ -462,14 +532,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: Text(
                     'Logout',
                     style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.transparent, // Menghapus latar belakang tombol
-                    shadowColor: Colors.transparent, // Menghapus bayangan tombol
+                    primary:
+                        Colors.transparent, // Menghapus latar belakang tombol
+                    shadowColor:
+                        Colors.transparent, // Menghapus bayangan tombol
                   ),
                 ),
               ),
@@ -479,47 +550,50 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  
+
   void _showLogoutDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: Text("Logout", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
-        content: Text("Are you sure you want to logout?"),
-        actions: <Widget>[
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop(); // Close dialog
-            },
-            child: Text(
-              'Cancel',
-              style: TextStyle(color: Color(0xFF0EBE7F)),
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white,
-            ),
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            "Logout",
+            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Login()),
-              );
-            },
-            child: Text(
-              'OK',
-              style: TextStyle(color: Color(0xFF0EBE7F)),
+          content: Text("Are you sure you want to logout?"),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close dialog
+              },
+              child: Text(
+                'Cancel',
+                style: TextStyle(color: Color(0xFF0EBE7F)),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+              ),
             ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.white,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
+              },
+              child: Text(
+                'OK',
+                style: TextStyle(color: Color(0xFF0EBE7F)),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+              ),
             ),
-          ),
-        ],
-      );
-    },
-  );
-}
+          ],
+        );
+      },
+    );
+  }
 
   void _handleMenuButtonPressed() {
     _advancedDrawerController.showDrawer();

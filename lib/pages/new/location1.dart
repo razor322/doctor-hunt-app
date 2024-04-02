@@ -1,14 +1,15 @@
 import 'package:doctor_hunt_app/pages/new/location1.dart';
+import 'package:doctor_hunt_app/pages/new/medicines2.dart';
 import 'package:flutter/material.dart';
 
-class MedicineOrder extends StatefulWidget {
-  const MedicineOrder({super.key});
+class LocationPage extends StatefulWidget {
+  const LocationPage({super.key});
 
   @override
-  State<MedicineOrder> createState() => _MedicineOrderState();
+  State<LocationPage> createState() => _LocationPageState();
 }
 
-class _MedicineOrderState extends State<MedicineOrder> {
+class _LocationPageState extends State<LocationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +38,7 @@ class _MedicineOrderState extends State<MedicineOrder> {
                   icon: Icon(Icons.arrow_back_ios),
                 ),
                 Text(
-                  'Medical Record',
+                  'Enable Location Services',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -53,13 +54,13 @@ class _MedicineOrderState extends State<MedicineOrder> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/icons/medicineorder.png',
+                  'assets/icons/icon_1.jpg',
                   width: 214,
                   height: 214,
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'No orders placed yet',
+                  'Location',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -67,7 +68,7 @@ class _MedicineOrderState extends State<MedicineOrder> {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'Place your first order now.',
+                  'Your location services are switched off, please enable location, to help us serve better',
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 30),
@@ -79,7 +80,8 @@ class _MedicineOrderState extends State<MedicineOrder> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LocationPage()),
+                        MaterialPageRoute(
+                            builder: (context) => MedicinesPage()),
                       );
                     },
                     child: Container(
@@ -87,7 +89,7 @@ class _MedicineOrderState extends State<MedicineOrder> {
                       height: 54,
                       child: Center(
                         child: Text(
-                          'Order Medicines',
+                          'Enable Location',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,

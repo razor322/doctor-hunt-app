@@ -6,6 +6,8 @@ import 'package:doctor_hunt_app/pages/doctor_find_page.dart';
 import 'package:doctor_hunt_app/pages/doctor_live_page.dart';
 import 'package:doctor_hunt_app/pages/doctor_popular.dart';
 import 'package:doctor_hunt_app/pages/doctor_select_time1.dart';
+import 'package:doctor_hunt_app/pages/new/profile13.dart';
+import 'package:doctor_hunt_app/pages/new/setprofile12.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -174,7 +176,13 @@ class _HomePageState extends State<HomePage> {
                               width: 71,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SetProfilePage()),
+                                    (route) => false);
+                              },
                               child: Image.asset(
                                 'assets/images/profile.png',
                                 width: 60,
